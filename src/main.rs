@@ -3,7 +3,8 @@ use rand::Rng;
 fn main() {
     let mut input = String::new();
     // Prompt the user for input
-     println!("Enter a number between 1 and 100:");
+    println!("Guess the number!");
+    println!("Enter a number between 1 and 100:");
 
     // Read the input
     io::stdin().read_line(&mut input).unwrap();
@@ -16,6 +17,15 @@ fn main() {
             return;
         }
     };
+
+    // Check if the number is within the valid range
+    if number < 1 {
+        println!("please enter number greater than 1");
+        return;
+    } else if number > 100 {
+        println!("please enter number smaller than 100");
+        return;
+    }
 
     //generate random number
     let mut rng = rand::thread_rng();
