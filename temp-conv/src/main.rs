@@ -30,10 +30,10 @@ fn main() {
                 .read_line(&mut input_string)
                 .expect("Failed to read line");
 
-            // let input_string: f32 = match input_string.trim().parse() {
-            //     Ok(num) => return num,
-            //     Err(_) => continue,
-            // };
+            let input_string: f32 = match input_string.trim().parse() {
+                Ok(num) => return num,
+                Err(_) => continue,
+            };
         }
     }
 
